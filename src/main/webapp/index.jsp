@@ -34,7 +34,7 @@
             <td><h3>Ảnh đại diện</h3></td>
         </tr>
     </div>
-    //Dùng code của java
+<%--  Dùng code Java--%>
 <%--    <div class="col">--%>
 <%--<%--%>
 <%--    for (Customer customer:customers) {--%>
@@ -49,7 +49,7 @@
 <%--            }--%>
 <%--        %>--%>
 
-    //Dùng thư viện JSTL
+<%--  Dùng thư viện JSTL--%>
     <c:forEach var="customers" items="${customers}">
         <tr>
             <td>${customers.name}</td>
