@@ -34,20 +34,30 @@
             <td><h3>Ảnh đại diện</h3></td>
         </tr>
     </div>
-    <div class="col">
-<%
-    for (Customer customer:customers) {
-%>
-        <tr>
-                <td><%= customer.getName()%></td>
-                <td><%= customer.getBirthDay()%></td>
-                <td><%= customer.getAddress()%></td>
-                <td><img src="<%= customer.getImage()%>"  style ="width:50px; height:50px" ></td>
-            </tr>
-        <%
-            }
-        %>
+    //Dùng code của java
+<%--    <div class="col">--%>
+<%--<%--%>
+<%--    for (Customer customer:customers) {--%>
+<%--%>--%>
+<%--        <tr>--%>
+<%--                <td><%= customer.getName()%></td>--%>
+<%--                <td><%= customer.getBirthDay()%></td>--%>
+<%--                <td><%= customer.getAddress()%></td>--%>
+<%--                <td><img src="<%= customer.getImage()%>"  style ="width:50px; height:50px" ></td>--%>
+<%--            </tr>--%>
+<%--        <%--%>
+<%--            }--%>
+<%--        %>--%>
 
+    //Dùng thư viện JSTL
+    <c:forEach var="customers" items="${customers}">
+        <tr>
+            <td>${customers.name}</td>
+            <td>${customers.birthDay}</td>
+            <td>${customers.address}</td>
+            <td><img src="${customers.image} " width="50px" height="50px" ></td>
+        </tr>
+    </c:forEach>
     </div>
 </table>
 </body>
